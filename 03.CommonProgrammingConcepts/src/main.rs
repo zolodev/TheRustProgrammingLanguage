@@ -1,7 +1,6 @@
 fn main() {
 
-    let c = 'z';
-    let omega = 'Ω';
-    let heart_eyed_cat = '😻';
+    let tup: (i32, f64, u8) = (500,6.4,1);
+    
         
 }
