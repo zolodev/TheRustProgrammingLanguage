@@ -1,6 +1,8 @@
 fn main() {
-    // let mut spaces = "   ";
-    // spaces = spaces.len(); // <--- not legal, Error, expected `&str`, found `usize`
 
-    // println!("Lenght of spaces: {}", spaces);
+    // Floating points represented according to IEEE-754 standard
+    let x = 2.0;    // f64
+    let y: f32 = 2.0;    // f32
+
+    println!("numbers: {} and {}", x, y);
 }
