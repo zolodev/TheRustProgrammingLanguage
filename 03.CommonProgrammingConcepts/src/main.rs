@@ -1,4 +1,10 @@
 fn main() {
-    let lucky_number = 7; // I'm feeling lucky today
+    let number = 3;
+
+    if number < 5 {
+        println!("condition was true");
+    } else {
+        println!("condition was false");
+    }
 }
 
