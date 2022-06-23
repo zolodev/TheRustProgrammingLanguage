@@ -1,5 +1,12 @@
 fn main() {
 
     // variable declaration
-    // let y = (let y = 6); // yields --> Error, variable declaration using `let` is a statement
+    let x = 5;
+
+    let y = {
+        let x = 3;
+        x + 1
+    };
+
+    println!("The value of y is: {}", y);  // The value of y is: 4
 }
