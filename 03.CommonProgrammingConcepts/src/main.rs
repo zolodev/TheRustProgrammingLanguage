@@ -1,14 +1,8 @@
 fn main() {
 
-    // addition
-    let sum = 5 + 10;
+    // boolean types
+    let t = true;
 
-    // substraction
-    let difference = 95.5 - 4.3;
-
-    // multiplication
-    let product = 4 * 30;
-
-    // division
-    let remainder = 43 % 5;
+    let f: bool = false;    // with explicit type annotation
+    
 }
