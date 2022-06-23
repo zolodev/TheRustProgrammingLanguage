@@ -2,16 +2,19 @@ use core::num;
 
 fn main() {
 
-    let mut counter = 0;
+    let mut number = 3;
 
-    let result = loop {
-        counter += 1;
+    while number != 0 {
+        println!("{}", number);
 
-        if counter == 10 {
-            break counter * 2;
-        }
-    };
+        number = number - 1;
+    }
 
-    println!("The result is {}", result);   // The result is 20
+    println!("LIFTOFF!!!");
+
+    // 3
+    // 2
+    // 1
+    // LIFTOFF!!!
 }
 
