@@ -1,8 +1,7 @@
 fn main() {
 
-    // boolean types
-    let t = true;
-
-    let f: bool = false;    // with explicit type annotation
-    
+    let c = 'z';
+    let omega = 'Ω';
+    let heart_eyed_cat = '😻';
+        
 }
