@@ -1,7 +1,7 @@
 fn main() {
-    let mut s = String::from("hello");
+    let s = String::from("hello"); // s is valid from this point forward
 
-    s.push_str(", world!"); // push_str() appends a literal to a String
-
-    println!("{}", s); // This will print `hello, world!`
+    // do stuff with s
+    // this scope is now over, and s is no
+    // longer valid
 }
