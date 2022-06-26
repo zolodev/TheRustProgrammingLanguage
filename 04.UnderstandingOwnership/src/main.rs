@@ -1,13 +1,9 @@
 fn main() {
-    let s1 = String::from("hello");
+    let s = String::from("hello");
 
-    let len = calculate_length(&s1);
-
-    println!("The length of '{}' is '{}'", s1, len); // -> The length of 'hello' is '5'
+    change(&s);
 }
 
-fn calculate_length(s: &String) -> usize {
-    // s is a reference to a String
-    s.len()
-} // Here, s goes out of scope. But because it does not have ownership of what
-  // it refers to, nothing happens.
+fn change(some_string: &String) {
+    some_string.push_str(", world"); // Error, `some_string` is a `&` reference, so the data it refers to cannot be borrowed as mutable
+}
