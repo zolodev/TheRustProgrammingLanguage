@@ -1,7 +1,7 @@
 use std::io::Bytes;
 
 fn main() {
-    let s = String::from("hello world");
+    let s = "Hello world!";
 
     let word = first_word(&s);
 
