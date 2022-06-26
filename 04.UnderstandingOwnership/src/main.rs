@@ -1,7 +1,7 @@
 fn main() {
-                            // s is not valid here, it´s not yet declared
-    let s = "hello";  // s is valid from this point forward
+    let mut s = String::from("hello");
 
-    // do stuff with s
-                            // this scope is now over, and s is no longer valid
+    s.push_str(", world");
+
+    println!("{}", s);
 }
