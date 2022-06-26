@@ -1,9 +1,11 @@
 use std::io::Bytes;
 
 fn main() {
-    let s = String::from("hello world");
+    let mut s = String::from("hello world");
 
     let word = first_word(&s);
+
+    s.clear(); // Error, mutable borrow occurs here
 
     println!("{}", word); // -> hello
 }
