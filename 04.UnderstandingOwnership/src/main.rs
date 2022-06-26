@@ -5,7 +5,7 @@ fn main() {
 
     let word = first_word(&s);
 
-    println!("{}", word); // -> hello
+    println!("{}", word); // -> Hello
 }
 
 fn first_word(s: &str) -> &str {
