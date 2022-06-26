@@ -1,9 +1,14 @@
 fn main() {
-    let words = String::from("Hello world!");
+    let mut s = String::from("hello world");
 
-    let index = first_word(&words);
+    let word = first_word(&s); // word will get the value 5
 
-    println!("{}", index); // -> 5
+    s.clear(); // this empties the String, makit it equal to ""
+
+    // word still has the value 5 here, but there's no more string that
+    // we could meaningfully use the value 5 with. word is now totally invalid!
+
+    println!("{}", word); // -> 5
 }
 
 fn first_word(s: &String) -> usize {
