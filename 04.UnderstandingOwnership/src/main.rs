@@ -1,13 +1,21 @@
+use std::io::Bytes;
+
 fn main() {
     let s = String::from("hello world");
 
-    // let len = s.len();
+    let word = first_word(&s);
 
-    // let slice = &s[0..2];
-    // let slice = &s[..2]; // the same without the zero
+    println!("{}", word); // -> hello
+}
 
-    // let slice = &s[3..len];
-    // let slice = &s[3..]; // the same without len
+fn first_word(s: &String) -> &str {
+    let bytes = s.as_bytes();
 
-    println!("{} {}", &s[..5], &s[6..]); // -> hello world
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return &s[0..i];
+        }
+    }
+
+    &s[..]
 }
