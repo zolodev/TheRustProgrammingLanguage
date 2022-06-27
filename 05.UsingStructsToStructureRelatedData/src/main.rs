@@ -30,10 +30,8 @@ fn main() {
     ); // -> user2data: user: user2, email: usr2@example.com
 
     let user3 = User {
-        active: user2.active,
-        username: user2.username,
         email: String::from("another@example.com"),
-        sign_in_count: user2.sign_in_count,
+        ..user2 // Short hand copy data from one struct to another, similar to javascript spread
     };
 
     println!(
