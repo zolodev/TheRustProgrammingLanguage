@@ -1,7 +1,16 @@
-// Using a Tuple struct without Named Fields
-struct Color(i32, i32, i32);
-struct Point(i32, i32, i32);
+// Unit struct
+struct User {
+    active: bool,
+    username: &str, // Error, expected named lifetime parameter
+    email: &str,    // Error, expected named lifetime parameter
+    sign_in_count: u64,
+}
+
 fn main() {
-    let black = Color(0, 0, 0);
-    let origin = Point(0, 0, 0);
+    let user1 = User {
+        email: "someone@example.com",
+        username: "someusername123",
+        active: true,
+        sign_in_count: 1,
+    };
 }
