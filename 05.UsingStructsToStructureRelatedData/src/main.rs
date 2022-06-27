@@ -21,4 +21,17 @@ fn main() {
     user1.email = String::from("newemail@example.com");
 
     println!("new email: {}", user1.email); // -> new email: newemail@example.com
+
+    let user2 = build_user(String::from("usr2@example.com"), String::from("user2"));
+
+    println!("user: {}, email: {}", user2.username, user2.email); // -> user: user2, email: usr2@example.com
+}
+
+fn build_user(email: String, username: String) -> User {
+    User {
+        email: email,
+        username: username,
+        active: true,
+        sign_in_count: 1,
+    }
 }
