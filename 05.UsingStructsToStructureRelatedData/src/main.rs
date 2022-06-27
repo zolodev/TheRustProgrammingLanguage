@@ -29,8 +29,8 @@ fn main() {
 
 fn build_user(email: String, username: String) -> User {
     User {
-        email: email,
-        username: username,
+        email,    // shorthand field populate, due to the field is the same name as the parameter
+        username, // shorthand field populate, due to the field is the same name as the parameter
         active: true,
         sign_in_count: 1,
     }
