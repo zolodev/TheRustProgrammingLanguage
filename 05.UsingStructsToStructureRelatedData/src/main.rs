@@ -1,16 +1,13 @@
-// Unit struct
-struct User {
-    active: bool,
-    username: &str, // Error, expected named lifetime parameter
-    email: &str,    // Error, expected named lifetime parameter
-    sign_in_count: u64,
+fn main() {
+    let width1 = 30;
+    let height1 = 50;
+
+    println!(
+        "The area of the rectangle is {} square pixels.",
+        area(width1, height1)
+    ); // -> The area of the rectangle is 1500 square pixels.
 }
 
-fn main() {
-    let user1 = User {
-        email: "someone@example.com",
-        username: "someusername123",
-        active: true,
-        sign_in_count: 1,
-    };
+fn area(width: u32, height: u32) -> u32 {
+    width * height
 }
