@@ -2,14 +2,20 @@ enum IpAddrKind {
     V4,
     V6,
 }
-fn main() {
-    let four = IpAddrKind::V4;
-    let six = IpAddrKind::V6;
 
-    // Functions can take an enum as a parameter
-    route(IpAddrKind::V4);
-    route(IpAddrKind::V6);
+//It is possible to combine structs and enums
+struct IpAddr {
+    kind: IpAddrKind,
+    address: String,
 }
+fn main() {
+    let home = IpAddr {
+        kind: IpAddrKind::V4,
+        address: String::from("127.0.0.1"),
+    };
 
-// Functions can take an enum as a parameter
-fn route(ip_kind: IpAddrKind) {}
+    let loopback = IpAddr {
+        kind: IpAddrKind::V6,
+        address: String::from("::1"),
+    };
+}
