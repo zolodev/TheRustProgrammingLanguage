@@ -1,14 +1,26 @@
+#[derive(Debug)]
+enum UsState {
+    Alabama,
+    // --snip--
+}
+enum Coin {
+    Quarter(UsState),
+}
 fn main() {
-    let config_max = Some(3u8);
+    let coin = Coin::Quarter(UsState::Alabama);
 
-    // match will only execute when config_max is Some()
-    // match config_max {
-    //     Some(max) => println!("The maximum is configured to be {}", max),
-    //     _ => (),
+    let mut count = 0;
+    // match coin {
+    //     Coin::Quarter(state) => println!("State quarter from {:?}", state), // -> State quarter from Alabama
+    //     _ => count += 1,
     // }
 
-    // same code as above, with if-let and shorter
-    if let Some(max) = config_max {
-        println!("The maximum is configured to be {}", max);
+    // Same as the match, but with if-let
+    if let Coin::Quarter(state) = coin {
+        println!("State quarter from {:?}", state); // -> State quarter from Alabama
+    } else {
+        count += 1;
     }
+
+    println!("Counted: {}", count); // -> Counted: 0
 }
