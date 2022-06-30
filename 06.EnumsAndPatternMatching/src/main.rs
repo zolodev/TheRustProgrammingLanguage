@@ -5,10 +5,11 @@ fn main() {
     match dice_roll {
         3 => add_fancy_hat(),
         7 => remove_fancy_hat(),
-        other => move_player(other), // other => Catch-all arm
+        // example of how to ignore all other values
+        _ => reroll(), // '_' Rust pattern to catch everything else, but do not intent to use the value
     }
 }
 
 fn add_fancy_hat() {}
 fn remove_fancy_hat() {}
-fn move_player(num_spaces: u8) {}
+fn reroll() {}
