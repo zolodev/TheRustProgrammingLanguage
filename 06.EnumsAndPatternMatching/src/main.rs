@@ -6,10 +6,9 @@ fn main() {
         3 => add_fancy_hat(),
         7 => remove_fancy_hat(),
         // example of how to ignore all other values
-        _ => reroll(), // '_' Rust pattern to catch everything else, but do not intent to use the value
+        _ => (), // '_' using a tuple type, will ignore all other values except 3 & 7 and do nothing
     }
 }
 
 fn add_fancy_hat() {}
 fn remove_fancy_hat() {}
-fn reroll() {}
