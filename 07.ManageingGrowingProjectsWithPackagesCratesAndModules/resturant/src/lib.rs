@@ -46,7 +46,9 @@ mod back_of_house {
 fn deliver_order() {}
 
 // Create a shortcut to hosting
-use crate::front_of_house::hosting;
+// Re-exporting the shortcut, making it
+// public available for others to use
+pub use crate::front_of_house::hosting;
 
 // Adding an unidomatic path
 use crate::front_of_house::hosting::add_to_waitlist;
