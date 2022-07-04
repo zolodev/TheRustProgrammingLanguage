@@ -47,6 +47,9 @@ fn deliver_order() {}
 
 // Create a shortcut to hosting
 use crate::front_of_house::hosting;
+
+// Adding an unidomatic path
+use crate::front_of_house::hosting::add_to_waitlist;
 mod customer {
 
     pub fn eat_at_resturant() {
@@ -74,5 +77,8 @@ mod customer {
 
         // Shortcut variant
         super::hosting::add_to_waitlist();
+
+        // unidiomatic path
+        super::add_to_waitlist();
     }
 }
