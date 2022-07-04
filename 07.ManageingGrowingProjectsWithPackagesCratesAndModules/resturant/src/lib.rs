@@ -45,6 +45,9 @@ mod back_of_house {
 
 fn deliver_order() {}
 
+// Create a shortcut to hosting
+use crate::front_of_house::hosting;
+
 pub fn eat_at_resturant() {
     // All enums options are available when public
     let order1 = back_of_house::Appetizer::Soup;
@@ -67,4 +70,7 @@ pub fn eat_at_resturant() {
 
     // Relative path
     front_of_house::hosting::add_to_waitlist();
+
+    // Shortcut variant
+    hosting::add_to_waitlist();
 }
