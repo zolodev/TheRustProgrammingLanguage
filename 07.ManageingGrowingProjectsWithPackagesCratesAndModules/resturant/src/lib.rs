@@ -82,3 +82,17 @@ mod customer {
         super::add_to_waitlist();
     }
 }
+
+// Sometimes the same names exists
+// This can cause confusions
+// Below is an example where we use fmt::Result and io::Result<()>
+use std::fmt;
+use std::io;
+
+fn function1() -> fmt::Result {
+    // --snip--
+}
+
+fn function2() -> io::Result<()> {
+    // --snip--
+}
