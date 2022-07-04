@@ -1,6 +1,7 @@
 // Large lists with external packages
-use std::cmp::Ordering;
-use std::io;
+// Can be combined to import multiple modules
+// from the same crate/library
+use std::{cmp::Ordering, io};
 
 use std::collections::HashMap;
 
