@@ -1,7 +1,7 @@
 // Large lists with external packages
-// Can be combined to import multiple modules
-// from the same crate/library
-use std::{cmp::Ordering, io};
+// same module with subpath
+use std::io;
+use std::io::Write;
 
 use std::collections::HashMap;
 
