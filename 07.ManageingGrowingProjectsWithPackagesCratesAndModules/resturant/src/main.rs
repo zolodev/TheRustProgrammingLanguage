@@ -1,7 +1,7 @@
 // Large lists with external packages
 // same module with subpath
-use std::io;
-use std::io::Write;
+// will make the list shorter
+use std::io::{self, Write};
 
 use std::collections::HashMap;
 
