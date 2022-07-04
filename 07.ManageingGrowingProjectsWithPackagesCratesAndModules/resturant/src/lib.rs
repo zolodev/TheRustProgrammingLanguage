@@ -86,13 +86,15 @@ mod customer {
 // Sometimes the same names exists
 // This can cause confusions
 // Below is an example where we use fmt::Result and io::Result<()>
-use std::fmt;
-use std::io;
+// By using an alias with the keyword: as
+// we can then use Result and IoResult
+use std::fmt::Result;
+use std::io::Result as IoResult;
 
-fn function1() -> fmt::Result {
+fn function1() -> Result {
     // --snip--
 }
 
-fn function2() -> io::Result<()> {
+fn function2() -> IoResult<()> {
     // --snip--
 }
