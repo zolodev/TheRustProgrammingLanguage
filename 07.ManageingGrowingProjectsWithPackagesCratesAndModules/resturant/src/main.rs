@@ -1,3 +1,7 @@
+// Large lists with external packages
+use std::cmp::Ordering;
+use std::io;
+
 use std::collections::HashMap;
 
 fn main() {
