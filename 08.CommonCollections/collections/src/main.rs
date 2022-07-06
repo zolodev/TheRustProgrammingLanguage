@@ -1,13 +1,16 @@
+#[derive(Debug)]
+enum SpreadsheetCell {
+    Int(i32),
+    Float(f64),
+    Text(String),
+}
 fn main() {
-    let mut v = vec![100, 32, 57];
+    let row = vec![
+        SpreadsheetCell::Int(3),
+        SpreadsheetCell::Text(String::from("blue")),
+        SpreadsheetCell::Float(10.12),
+    ];
 
-    // updating values in vector
-    for i in &mut v {
-        *i += 50
-    }
-
-    // Iterate over a mutable vector after it has changed
-    for i in &v {
-        println!("{}", i);
-    }
+    // dbg!(row);
+    println!("{:?}", row); // -> [Int(3), Text("blue"), Float(10.12)]
 }
