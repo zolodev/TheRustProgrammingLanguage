@@ -1,8 +1,15 @@
 fn main() {
-    let data = "initial contents";
-    let s = data.to_string();
+    let mut s = String::from("foo");
+    s.push_str("bar");
 
-    // the method also works on a literal directly
-    let s = "initial contents".to_string();
-    let s = String::from("initial contents"); // Same as above
+    println!("{}", s); // -> foobar
+
+    let mut s1 = String::from("foo");
+    let s2 = "bar";
+
+    // push_str can also take a variable like
+    // a str literal and append it to the String
+    s1.push_str(s2);
+
+    println!("{}", s1); // -> foobar
 }
