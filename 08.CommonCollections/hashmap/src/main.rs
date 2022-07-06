@@ -1,9 +1,10 @@
 use std::collections::HashMap;
 
 fn main() {
-    let mut scores = HashMap::new();
-    scores.insert(String::from("Blue team"), 10);
-    scores.insert(String::from("Red team"), 50);
+    let teams = vec![String::from("Blue team"), String::from("Red team")];
+    let initial_scores = vec![10, 50];
 
-    println!("{:?}", scores); // -> {"Blue team": 10, "Red team": 50}
+    let scores: HashMap<_, _> = teams.into_iter().zip(initial_scores.into_iter()).collect();
+
+    println!("{:?}", scores); // -> {"Red team": 50, "Blue team": 10}
 }
