@@ -47,4 +47,15 @@ fn main() {
     // due to the support of UTF-8
     let s1 = String::from("hello");
     // let h = &s1[0]; // Error, `String` cannot be indexed by `{integer}`
+    let h = &s1[..1]; // Slicing a String could be an alternative
+    println!("{}", h);
+
+    // Example string with special characters
+    let hello = "नमस्ते"; // Hindi translates to Greetings!
+
+    // Caution when slicing special chars.
+    // special chars take up more bytes
+    // let s = &hello[0..1]; // Error, thread 'main' panicked at 'byte index 1 is not a char boundary; it is inside 'न' (bytes 0..3) of `नमस्ते`'
+    let s = &hello[0..6];
+    println!("{}", s); // -> नम
 }
