@@ -1,8 +1,9 @@
 /****************************************************************************
- * Filename     : main.rs
- * Created      : Wed Jul 06 2022
- * Author       : Zolo
- * Description  : Working through the Rust book chapter 08-03 HashMaps
+ * Filename      : main.rs
+ * Created       : Wed Jul 06 2022
+ * Author        : Zolo
+ * Github        : https://github.com/zolodev
+ * Description   : Working through the Rust book chapter 08-03 HashMaps
 *****************************************************************************/
 #![warn(clippy::all, clippy::pedantic)]
 
