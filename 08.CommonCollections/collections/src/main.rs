@@ -42,4 +42,9 @@ fn main() {
     let s = format!("{}-{}-{}", s1, s2, s3);
 
     println!("{}", s); // -> tic-tac-toe
+
+    // Not possible to index Strings or str
+    // due to the support of UTF-8
+    let s1 = String::from("hello");
+    // let h = &s1[0]; // Error, `String` cannot be indexed by `{integer}`
 }
