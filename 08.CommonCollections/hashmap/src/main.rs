@@ -1,10 +1,12 @@
 use std::collections::HashMap;
 
 fn main() {
-    let teams = vec![String::from("Blue team"), String::from("Red team")];
-    let initial_scores = vec![10, 50];
+    let field_name = String::from("Favorite color");
+    let field_value = String::from("Blue");
 
-    let scores: HashMap<_, _> = teams.into_iter().zip(initial_scores.into_iter()).collect();
+    let mut map = HashMap::new();
+    map.insert(&field_name, &field_value);
 
-    println!("{:?}", scores); // -> {"Red team": 50, "Blue team": 10}
+    println!("{:?}", map); // -> {"Favorite color": "Blue"}
+    println!("{:?}", map[&field_name]); // -> "Blue"
 }
