@@ -8,6 +8,7 @@
 /// programming languages, but it prevents you from having to
 /// handle errors involving non-ASCII characters later in your
 /// development life cycle. ♥
+/// Source: https://doc.rust-lang.org/book/ch08-02-strings.html
 
 fn main() {
     let mut s = String::from("foo");
