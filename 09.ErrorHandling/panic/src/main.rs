@@ -7,4 +7,6 @@
  *                 Errors with Panic
 *****************************************************************************/
 #![warn(clippy::all, clippy::pedantic)]
-fn main() {}
+fn main() {
+    panic!("crash and burn baby");
+}

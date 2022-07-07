@@ -3,6 +3,13 @@ name = "panic"
 version = "0.1.0"
 edition = "2021"
 
+# dev profile 
+[profile.release]
+# panic =  'abort' => In order to make the project small and 
+# in case the app crash we let the OS clean up the memory mess.
+# Instead of default that Rust will try to unwind and clean up.
+panic = 'abort'
+
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
