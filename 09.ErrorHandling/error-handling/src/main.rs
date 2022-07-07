@@ -7,13 +7,21 @@
 *****************************************************************************/
 #![warn(clippy::all, clippy::pedantic)]
 
-use std::fs::File;
+use std::{fs::File, io::ErrorKind};
 
 fn main() {
     let f: Result<File, std::io::Error> = File::open("hello.txt");
 
-    let f = match f {
+    let _f = match f {
         Ok(file) => file,
-        Err(error) => panic!("Problem opening the fil {:?}", error),
+        Err(error) => match error.kind() {
+            ErrorKind::NotFound => match File::create("hello.txt") {
+                Ok(fc) => fc,
+                Err(e) => panic!("Problem creating the file {:?}", e),
+            },
+            _other_error => {
+                panic!("Problem opening the file {:?}", _other_error)
+            }
+        },
     };
 }
