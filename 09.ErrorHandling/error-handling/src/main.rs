@@ -43,7 +43,7 @@ fn main() {
 
     let f = read_username_from_file();
     if f.is_err() {
-        panic!("Can not read username from file");
+        panic!("Can not read username from file: {:?}", f.err());
     }
 }
 
