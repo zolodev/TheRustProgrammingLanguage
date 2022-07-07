@@ -8,5 +8,7 @@
 *****************************************************************************/
 #![warn(clippy::all, clippy::pedantic)]
 fn main() {
-    panic!("crash and burn baby");
+    let v = vec![1, 2, 3];
+
+    v[99];
 }
