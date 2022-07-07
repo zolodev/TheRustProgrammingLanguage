@@ -7,10 +7,11 @@
 *****************************************************************************/
 #![warn(clippy::all, clippy::pedantic)]
 
-use std::{fs::File, io::ErrorKind};
+use std::fs::File;
+// use std::io::ErrorKind;
 
 fn main() {
-    let f: Result<File, std::io::Error> = File::open("hello.txt");
+    // let f: Result<File, std::io::Error> = File::open("hello.txt");
 
     // let _f = match f {
     //     Ok(file) => file,
@@ -25,13 +26,15 @@ fn main() {
     //     },
     // };
 
-    // Alternative using closure
-    let _f = File::open("hello.txt").unwrap_or_else(|error| {
-        if error.kind() == ErrorKind::NotFound {
-            File::create("hello.txt")
-                .unwrap_or_else(|error| panic!("Problem creating the file: {:?}", error))
-        } else {
-            panic!("Problem opening the file: {:?}", error)
-        }
-    });
+    // // Alternative using closure
+    // let _f = File::open("hello.txt").unwrap_or_else(|error| {
+    //     if error.kind() == ErrorKind::NotFound {
+    //         File::create("hello.txt")
+    //             .unwrap_or_else(|error| panic!("Problem creating the file: {:?}", error))
+    //     } else {
+    //         panic!("Problem opening the file: {:?}", error)
+    //     }
+    // });
+
+    let _f = File::open("hello.txt").expect("Failed to open hello.txt");
 }
