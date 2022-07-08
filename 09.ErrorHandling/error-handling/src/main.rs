@@ -7,44 +7,10 @@
 *****************************************************************************/
 #![warn(clippy::all, clippy::pedantic)]
 
-// use std::io::ErrorKind;
-
-use std::{fs, io};
+use std::fs::File;
 
 fn main() {
-    // let f: Result<File, std::io::Error> = File::open("hello.txt");
-
-    // let _f = match f {
-    //     Ok(file) => file,
-    //     Err(error) => match error.kind() {
-    //         ErrorKind::NotFound => match File::create("hello.txt") {
-    //             Ok(fc) => fc,
-    //             Err(e) => panic!("Problem creating the file {:?}", e),
-    //         },
-    //         _other_error => {
-    //             panic!("Problem opening the file {:?}", _other_error)
-    //         }
-    //     },
-    // };
-
-    // // Alternative using closure
-    // let _f = File::open("hello.txt").unwrap_or_else(|error| {
-    //     if error.kind() == ErrorKind::NotFound {
-    //         File::create("hello.txt")
-    //             .unwrap_or_else(|error| panic!("Problem creating the file: {:?}", error))
-    //     } else {
-    //         panic!("Problem opening the file: {:?}", error)
-    //     }
-    // });
-
-    // let _f = File::open("hello.txt").expect("Failed to open hello.txt");
-
-    let f = read_username_from_file();
-    if f.is_err() {
-        panic!("Can not read username from file: {:?}", f.err());
-    }
-}
-
-fn read_username_from_file() -> Result<String, io::Error> {
-    fs::read_to_string("hello.txt")
+    // Error, when using '?' operator
+    let f = File::open("hello.txt")?;
+    // -> - this function should return `Result` or `Option` to accept `?`
 }
