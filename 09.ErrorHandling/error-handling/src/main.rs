@@ -7,9 +7,9 @@
 *****************************************************************************/
 #![warn(clippy::all, clippy::pedantic)]
 
-use std::{error::Error, fs::File};
+use std::net::IpAddr;
 
-fn main() -> Result<(), Box<dyn Error>> {
-    let f = File::open("hello.txt")?;
-    Ok(())
+fn main() {
+    let home: IpAddr = "127.0.0.1".parse().unwrap();
+    println!("{}", home)
 }
