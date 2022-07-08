@@ -7,10 +7,11 @@
 *****************************************************************************/
 #![warn(clippy::all, clippy::pedantic)]
 
-use std::fs::File;
-
 fn main() {
-    // Error, when using '?' operator
-    let f = File::open("hello.txt")?;
-    // -> - this function should return `Result` or `Option` to accept `?`
+    println!("{:?}", last_char_of_first_line("one")); // -> Some('e')
+    println!("{:?}", last_char_of_first_line("")); // -> None
+}
+
+fn last_char_of_first_line(text: &str) -> Option<char> {
+    text.lines().next()?.chars().last()
 }
