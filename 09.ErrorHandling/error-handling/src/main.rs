@@ -7,11 +7,9 @@
 *****************************************************************************/
 #![warn(clippy::all, clippy::pedantic)]
 
-use std::{
-    fs::File,
-    io::{self, Read},
-};
 // use std::io::ErrorKind;
+
+use std::{fs, io};
 
 fn main() {
     // let f: Result<File, std::io::Error> = File::open("hello.txt");
@@ -48,7 +46,5 @@ fn main() {
 }
 
 fn read_username_from_file() -> Result<String, io::Error> {
-    let mut s = String::new();
-    File::open("hello.txt")?.read_to_string(&mut s)?;
-    Ok(s)
+    fs::read_to_string("hello.txt")
 }
