@@ -10,16 +10,26 @@
 fn main() {
     let number_list = vec![34, 50, 25, 100, 65];
 
-    let result = largest(&number_list);
+    let result = largest_i32(&number_list);
     println!("The largets number is {}", result);
 
-    let number_list = vec![102, 34, 6000, 89, 54, 2, 43, 8];
+    let char_list = vec!['y', 'm', 'a', 'q'];
 
-    let result = largest(&number_list);
+    let result = largest_char(&char_list);
     println!("The largets number is {}", result);
 }
 
-fn largest(list: &[i32]) -> i32 {
+fn largest_i32(list: &[i32]) -> i32 {
+    let mut largest = list[0];
+    for &number in list {
+        if number > largest {
+            largest = number
+        }
+    }
+    largest
+}
+
+fn largest_char(list: &[char]) -> char {
     let mut largest = list[0];
     for &number in list {
         if number > largest {
