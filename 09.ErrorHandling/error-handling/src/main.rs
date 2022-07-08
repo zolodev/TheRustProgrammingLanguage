@@ -7,11 +7,9 @@
 *****************************************************************************/
 #![warn(clippy::all, clippy::pedantic)]
 
-fn main() {
-    println!("{:?}", last_char_of_first_line("one")); // -> Some('e')
-    println!("{:?}", last_char_of_first_line("")); // -> None
-}
+use std::{error::Error, fs::File};
 
-fn last_char_of_first_line(text: &str) -> Option<char> {
-    text.lines().next()?.chars().last()
+fn main() -> Result<(), Box<dyn Error>> {
+    let f = File::open("hello.txt")?;
+    Ok(())
 }
