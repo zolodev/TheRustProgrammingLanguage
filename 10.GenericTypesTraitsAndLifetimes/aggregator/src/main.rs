@@ -7,7 +7,7 @@
 *****************************************************************************/
 #![warn(clippy::all, clippy::pedantic)]
 
-use aggregator::{Summary, Tweet};
+use aggregator::{NewsArticle, Summary, Tweet};
 fn main() {
     let tweet = Tweet {
         username: String::from("horse_ebooks"),
@@ -19,5 +19,17 @@ fn main() {
         retweet: false,
     };
 
-    println!("1 new tweet: {}", tweet.summarize())
+    println!("1 new tweet: {}", tweet.summarize());
+
+    let article = NewsArticle {
+        headline: String::from("Penguins win the Stanly Cup Championship!"),
+        location: String::from("Pittsburgh, PA, USA"),
+        author: String::from("Iceburgh"),
+        content: String::from(
+            "The pittsburgh Penguins once again are the best \
+            hockey team in the NHL.",
+        ),
+    };
+
+    println!("New article available! {}", article.summarize());
 }
