@@ -24,7 +24,8 @@ fn main() {
     // let result = largest(&char_list);
     // println!("The largets number is {}", result);
 
-    let wont_work = Point { x: 5, y: 4.0 };
+    // This can also be used with two of the same type
+    let wont_work = Point { x: 5, y: 4 };
 
     println!("wont_work point {:?}", wont_work);
 }
