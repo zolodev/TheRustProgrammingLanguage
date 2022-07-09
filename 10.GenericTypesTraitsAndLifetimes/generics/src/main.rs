@@ -24,6 +24,7 @@ fn main() {
     // let result = largest(&char_list);
     // println!("The largets number is {}", result);
 
+    // The fields x and y must be the same type
     let wont_work = Point { x: 5, y: 4.0 }; // Error, missmatch int and float
 
     println!("wont_work point {:?}", wont_work);
