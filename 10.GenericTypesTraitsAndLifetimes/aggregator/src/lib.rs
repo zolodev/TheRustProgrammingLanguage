@@ -15,6 +15,10 @@ pub trait Summary {
         format!("(Read more...from {})", self.summarize_author())
     }
 }
+// Traits as Parameters
+pub fn notify(item: &impl Summary) {
+    println!("Breaking news! {}", item.summarize());
+}
 
 pub struct NewsArticle {
     pub headline: String,
@@ -27,6 +31,7 @@ impl Summary for NewsArticle {
     fn summarize_author(&self) -> String {
         format!("{}", self.author)
     }
+
     // fn summarize(&self) -> String {
     //     format!("{}, by {} ({})", self.headline, self.author, self.location)
     // }

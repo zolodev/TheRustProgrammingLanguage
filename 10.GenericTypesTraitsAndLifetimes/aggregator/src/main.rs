@@ -7,7 +7,7 @@
 *****************************************************************************/
 #![warn(clippy::all, clippy::pedantic)]
 
-use aggregator::{NewsArticle, Summary, Tweet};
+use aggregator::{notify, NewsArticle, Summary, Tweet};
 fn main() {
     let tweet = Tweet {
         username: String::from("horse_ebooks"),
@@ -19,7 +19,7 @@ fn main() {
         retweet: false,
     };
 
-    println!("1 new tweet: {}", tweet.summarize());
+    // println!("1 new tweet: {}", tweet.summarize());
 
     let article = NewsArticle {
         headline: String::from("Penguins win the Stanly Cup Championship!"),
@@ -31,5 +31,7 @@ fn main() {
         ),
     };
 
+    // Calling notify and passing triat as an paramenter
+    println!("New article available! {:?}", notify(&tweet));
     println!("New article available! {}", article.summarize());
 }
