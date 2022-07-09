@@ -15,8 +15,8 @@ pub trait Summary {
         format!("(Read more...from {})", self.summarize_author())
     }
 }
-// Traits as Parameters
-pub fn notify(item: &impl Summary) {
+// Traits as Parameters, converted to a generic w/o syntax sugar
+pub fn notify<T: Summary>(item: &T) {
     println!("Breaking news! {}", item.summarize());
 }
 
