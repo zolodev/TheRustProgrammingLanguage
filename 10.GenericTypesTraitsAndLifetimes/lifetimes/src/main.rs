@@ -16,6 +16,7 @@ fn main() {
             r = &x; // Error, borrowed value does not live long enough
         }
 
+        // r has lost scope from above, therfore we get the error
         println!("r: {}", r);
     }
 }
