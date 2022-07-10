@@ -17,8 +17,8 @@ pub trait Summary {
         format!("(Read more...from {})", self.summarize_author())
     }
 }
-// Traits as Parameters
-pub fn notify(item: &(impl Summary + Display)) {
+// Traits as Parameters, generic
+pub fn notify<T: Summary + Display>(item: &T) {
     println!("Breaking news! {}", item.summarize());
 }
 
@@ -37,6 +37,12 @@ impl Summary for NewsArticle {
     // fn summarize(&self) -> String {
     //     format!("{}, by {} ({})", self.headline, self.author, self.location)
     // }
+}
+
+impl Display for NewsArticle {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{}: {}", self.author, self.content)
+    }
 }
 
 pub struct Tweet {

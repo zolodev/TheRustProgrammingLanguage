@@ -34,10 +34,9 @@ fn main() {
     // Calling notify and passing triat as an paramenter
     notify(&tweet);
 
-    // Calling article is not possible because it does not have a bound
-    // to the Display, this will throw an error:
-    // -> required by this bound in `notify`
-    // notify(&article);
+    // Calling article using the generic notify after implementing
+    // NewsArticle with Display
+    notify(&article);
 
     // Calling Tweet with Display
     println!("New article available! {}", &tweet);
