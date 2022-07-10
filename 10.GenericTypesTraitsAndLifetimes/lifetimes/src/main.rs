@@ -9,14 +9,10 @@
 
 fn main() {
     // Preventing Dangling References with Lifetimes
-    {
-        let r;
-        {
-            let x = 5;
-            r = &x; // Error, borrowed value does not live long enough
-        }
 
-        // r has lost scope from above, therfore we get the error
+    {
+        let x = 5;
+        let r = &x;
         println!("r: {}", r);
     }
 }
