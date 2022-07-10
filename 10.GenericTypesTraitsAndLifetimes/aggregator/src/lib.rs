@@ -22,6 +22,14 @@ pub fn notify<T: Summary + Display>(item: &T) {
     println!("Breaking news! {}", item.summarize());
 }
 
+fn return_summarizable() -> impl Summary {
+    Tweet {
+        username: String::from("horse_ebooks"),
+        content: String::from("of course, as you probably alread know, people"),
+        reply: false,
+        retweet: false,
+    }
+}
 pub struct NewsArticle {
     pub headline: String,
     pub location: String,
