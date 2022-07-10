@@ -7,6 +7,8 @@
 *****************************************************************************/
 #![warn(clippy::all, clippy::pedantic)]
 
+use std::fmt::Display;
+
 pub trait Summary {
     fn summarize_author(&self) -> String;
 
@@ -16,7 +18,7 @@ pub trait Summary {
     }
 }
 // Traits as Parameters
-pub fn notify(item: &(impl Summary)) {
+pub fn notify(item: &(impl Summary + Display)) {
     println!("Breaking news! {}", item.summarize());
 }
 
@@ -50,5 +52,11 @@ impl Summary for Tweet {
     }
     fn summarize(&self) -> String {
         format!("{}: {}", self.username, self.content)
+    }
+}
+
+impl Display for Tweet {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "{}: {}", self.username, self.content)
     }
 }
