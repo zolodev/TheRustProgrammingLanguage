@@ -75,6 +75,9 @@ fn main() {
 
     i.announce_and_return_part("announcement");
     println!("Level: {}", i.level());
+
+    // Static lifetime
+    let s: &'static str = "I have a static lifetime.";
 }
 
 fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
