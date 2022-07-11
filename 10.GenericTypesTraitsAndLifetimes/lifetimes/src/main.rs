@@ -7,6 +7,39 @@
 *****************************************************************************/
 #![warn(clippy::all, clippy::pedantic)]
 
+/// Rust lifetime rules
+/// 1. Each elided lifetime in input position becomes a distinct
+/// lifetime parameter.
+/// ´´´
+/// pub fn name<'a: 'b, 'b>(in: &'a str, other: &'b str) -> &'a str {
+///     in
+/// }
+/// ´´´  
+/// 2. If there is exactly one input lifetime position (elided or not),
+/// that lifetime is assigned to all elided output lifetimes.
+///
+/// ´´´
+/// pub fn first(input: &str) -> (&str, &str) {
+///     (input, input)
+/// }
+/// ´´´
+/// 3. If there are multiple input lifetime positions, but one of them is
+/// &self or &mut self, the lifetime of self is assigned to all elided
+/// output lifetimes.
+/// ´´´
+/// struct Config {
+///     name: String
+/// }
+///
+/// impl Config {
+///     fn name(&self, other_useless_val: &str) -> &str {
+///         &self.name // <- same lifetime as &self
+///     }
+/// }
+/// ´´´
+/// 4. Otherwise, it is an error to elide an output lifetime.
+/// Source: https://togglebit.io/posts/lifetime-rules-of-rust/
+
 // Struct Lifetime
 struct ImportantExcerpt<'a> {
     part: &'a str,
