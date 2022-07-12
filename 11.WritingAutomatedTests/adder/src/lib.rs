@@ -51,7 +51,3 @@ impl Rectangle {
         self.width > other.width && self.height > other.height
     }
 }
-
-pub fn add_two(a: i32) -> i32 {
-    a + 2
-}
