@@ -12,16 +12,22 @@ mod tests {
     use super::*;
 
     #[test]
-    fn greeting_contains_name() {
-        let result = greeting("Carol");
-        assert!(
-            result.contains("Carol"),
-            "Greeting did not contain name, value was `{}`",
-            result
-        );
+    #[should_panic]
+    fn greater_then_100() {
+        Guess::new(200);
     }
 }
 
-pub fn greeting(name: &str) -> String {
-    String::from("Hello!")
+pub struct Guess {
+    value: i32,
+}
+
+impl Guess {
+    pub fn new(value: i32) -> Guess {
+        if value < 1 || value > 100 {
+            panic!("Guess value must be between 1 and 100, got {}", value);
+        }
+
+        Guess { value }
+    }
 }
