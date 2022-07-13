@@ -26,6 +26,7 @@ mod tests {
     }
 
     #[test]
+    #[ignore = "It is a big number"]
     fn one_hundred() {
         assert_eq!(102, add_two(100));
     }
