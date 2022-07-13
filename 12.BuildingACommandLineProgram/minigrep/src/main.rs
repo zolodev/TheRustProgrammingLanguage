@@ -10,6 +10,8 @@
 #![warn(clippy::all, clippy::pedantic)]
 
 use std::env;
+use std::fs;
+
 fn main() {
     // Collect the arguments into a vector
     let args: Vec<String> = env::args().collect();
@@ -20,4 +22,8 @@ fn main() {
 
     println!("Searching for {}", query);
     println!("in file {}", filename);
+
+    let contents = fs::read_to_string(filename).expect("Something went wrong reading the file");
+
+    println!("With text:\n{}", contents);
 }
