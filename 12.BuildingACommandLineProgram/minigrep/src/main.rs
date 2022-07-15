@@ -23,10 +23,6 @@ fn main() {
         process::exit(1);
     });
 
-    // Feedback to the user
-    println!("Searching for {}", config.query);
-    println!("in file {}", config.filename);
-
     // Run the program using the configuration
     if let Err(e) = minigrep::run(config) {
         println!("Application error: {}", e);
