@@ -29,20 +29,31 @@ impl Config {
 }
 
 pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
-    fs::read_to_string(config.filename)?;
+    let contents = fs::read_to_string(config.filename)?;
+
+    for line in search(&config.query, &contents) {
+        println!("{}", line);
+    }
 
     Ok(())
 }
 
 fn search<'a>(query: &'a str, contents: &'a str) -> Vec<&'a str> {
-    // TODO:
-    // Iterate through each line of the contents.
-    // Check whether the line contains our query string.
-    // If it does, add it to the list of values we’re returning.
-    // If it doesn’t, do nothing.
-    // Return the list of results that match.
+    let mut results = Vec::new();
 
-    vec![]
+    // Iterate through each line of the contents.
+    for line in contents.lines() {
+        // Check whether the line contains our query string.
+        if line.contains(query) {
+            // If it does, add it to the list of values we’re returning.
+            results.push(line.trim());
+        }
+
+        // If it doesn’t, do nothing.
+    }
+
+    // Return the list of results that match.
+    results
 }
 
 #[cfg(test)]
