@@ -57,7 +57,16 @@ fn search_sensitive<'a>(query: &'a str, contents: &'a str) -> Vec<&'a str> {
 }
 
 fn search_insensitive<'a>(query: &'a str, contents: &'a str) -> Vec<&'a str> {
-    vec![]
+    let query = query.to_lowercase();
+    let mut results = Vec::new();
+
+    for line in contents.lines() {
+        if line.to_lowercase().contains(&query) {
+            results.push(line.trim());
+        }
+    }
+
+    results
 }
 
 #[cfg(test)]
@@ -89,7 +98,7 @@ mod tests {
         Trust me.";
 
         assert_eq!(
-            vec!["Rust: ", "Trust me."],
+            vec!["Rust:", "Trust me."],
             search_insensitive(query, contents)
         );
     }
