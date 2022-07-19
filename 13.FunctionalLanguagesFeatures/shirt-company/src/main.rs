@@ -7,8 +7,6 @@
 *****************************************************************************/
 #![warn(clippy::all, clippy::pedantic)]
 
-use core::num;
-
 #[derive(Debug, PartialEq, Clone, Copy)]
 enum ShirtColor {
     Red,
