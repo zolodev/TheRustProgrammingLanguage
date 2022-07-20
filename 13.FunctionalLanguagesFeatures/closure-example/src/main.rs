@@ -18,12 +18,11 @@ fn main() {
 
     println!("{}", expensive_closure(2));
 
-    let list = vec![1, 2, 3];
+    let mut list = vec![1, 2, 3];
     println!("First {:?}", list);
 
-    let only_borrows = || println!("From closure: {:?}", list);
+    let mut borrows_mutable = || list.push(7);
 
-    println!("Before calling closure {:?}", list);
-    only_borrows();
+    borrows_mutable();
     println!("After calling closure {:?}", list);
 }
