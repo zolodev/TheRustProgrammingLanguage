@@ -7,11 +7,16 @@
 *****************************************************************************/
 #![warn(clippy::all, clippy::pedantic)]
 
-use mycrate::add_one;
+use mycrate::{add_one, kinds::PrimaryColor, utils::mix};
 
 fn main() {
     let arg = 5;
     let answer = add_one(arg);
 
     println!("{answer}"); // -> 6
+
+    let red = PrimaryColor::Red;
+    let yellow = PrimaryColor::Yellow;
+
+    mix(red, yellow);
 }
