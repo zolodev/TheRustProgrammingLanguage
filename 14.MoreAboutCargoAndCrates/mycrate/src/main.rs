@@ -9,7 +9,7 @@
 
 use mycrate::{
     add_one,
-    Art::{kinds::PrimaryColor, utils::mix},
+    Art::{mix, PrimaryColor},
 };
 
 fn main() {

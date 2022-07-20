@@ -14,7 +14,11 @@
 //! # Art
 //!
 //! A library for modeling articstic concepts.
+
 pub mod Art {
+    pub use self::kinds::PrimaryColor;
+    pub use self::kinds::SecondaryColor;
+    pub use self::utils::mix;
 
     pub mod kinds {
         /// The primary colors according to the RYB color model.
