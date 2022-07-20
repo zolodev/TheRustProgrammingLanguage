@@ -7,7 +7,7 @@
 *****************************************************************************/
 #![warn(clippy::all, clippy::pedantic)]
 
-use useful_docs::add_one;
+use mycrate::add_one;
 
 fn main() {
     let arg = 5;
