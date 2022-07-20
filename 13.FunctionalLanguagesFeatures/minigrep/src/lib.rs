@@ -5,6 +5,7 @@
  * Github        : https://github.com/zolodev
  * Description   : Adding the lib.rs according to Rust idiom and best
  *                 practices. This file will contain the app logic and tests.
+ *                 Optimizing according to chapter 13
 *****************************************************************************/
 #![warn(clippy::all, clippy::pedantic)]
 
@@ -17,13 +18,18 @@ pub struct Config {
 }
 
 impl Config {
-    pub fn new(args: &[String]) -> Result<Config, &'static str> {
-        if args.len() < 3 {
-            return Err("not enough arguments");
-        }
+    pub fn new(mut args: impl Iterator<Item = String>) -> Result<Config, &'static str> {
+        args.next();
 
-        let query = args[1].clone();
-        let filename = args[2].clone();
+        let query = match args.next() {
+            Some(arg) => arg,
+            None => return Err("Didn't get a query string"),
+        };
+
+        let filename = match args.next() {
+            Some(arg) => arg,
+            None => return Err("Didn't get a file name"),
+        };
 
         let ignore_case = env::var("IGNORE_CASE").is_ok();
 
@@ -52,34 +58,19 @@ pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
 }
 
 fn search_sensitive<'a>(query: &'a str, contents: &'a str) -> Vec<&'a str> {
-    let mut results = Vec::new();
-
-    // Iterate through each line of the contents.
-    for line in contents.lines() {
-        // Check whether the line contains our query string.
-        if line.contains(query) {
-            // If it does, add it to the list of values we’re returning.
-            results.push(line.trim());
-        }
-
-        // If it doesn’t, do nothing.
-    }
-
-    // Return the list of results that match.
-    results
+    contents
+        .lines()
+        .filter(|line| line.contains(query))
+        .map(str::trim)
+        .collect()
 }
 
 fn search_insensitive<'a>(query: &'a str, contents: &'a str) -> Vec<&'a str> {
-    let query = query.to_lowercase();
-    let mut results = Vec::new();
-
-    for line in contents.lines() {
-        if line.to_lowercase().contains(&query) {
-            results.push(line.trim());
-        }
-    }
-
-    results
+    contents
+        .lines()
+        .filter(|line| line.to_lowercase().contains(&query.to_lowercase()))
+        .map(str::trim)
+        .collect()
 }
 
 #[cfg(test)]
