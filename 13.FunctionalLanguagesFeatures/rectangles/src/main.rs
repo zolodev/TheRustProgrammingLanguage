@@ -29,6 +29,12 @@ fn main() {
         },
     ];
 
-    list.sort_by_key(|r| r.width);
-    println!("{:#?}", list);
+    let mut num_sort_operations = 0;
+
+    list.sort_by_key(|r| {
+        num_sort_operations += 1;
+        r.width
+    });
+
+    println!("{:#?}, sorted in {num_sort_operations} operations", list);
 }
