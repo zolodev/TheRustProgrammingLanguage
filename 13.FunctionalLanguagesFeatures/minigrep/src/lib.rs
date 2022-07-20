@@ -18,6 +18,27 @@ pub struct Config {
 }
 
 impl Config {
+    /// Creates a new implementation of Config
+    ///
+    /// The config takes two args from cli.
+    /// First is the `search query`.
+    /// Seond is the filename (the file to seach in).
+    ///
+    /// # Errors
+    ///
+    /// `Didn't get a query string` if no search string was provided.
+    /// `Didn't get a file name` if no filename was provided.
+    ///
+    /// # Example
+    /// ```should_panic
+    /// use std::{env, process};
+    /// use minigrep::Config;
+    ///
+    /// let config = Config::new(env::args()).unwrap_or_else(|err| {
+    ///     eprintln!("Problem parsing arguments: {}", err);
+    ///     process::exit(1);
+    /// });
+    /// ```
     pub fn new(mut args: impl Iterator<Item = String>) -> Result<Config, &'static str> {
         args.next();
 
@@ -41,6 +62,32 @@ impl Config {
     }
 }
 
+/// Run `minigrep` with the configuration
+/// Depending on the configuration while running `minigrep`
+/// it will use the function `search_sensitive` as default
+/// or if `IGNORE_CASE` env variable is set, it will use `search_insensitive`.
+///
+/// # Errors
+///
+/// `Didn't get a query string` if no search string was provided.
+/// `Didn't get a file name` if no filename was provided.
+///
+/// # Example
+///
+/// ```should_panic
+/// use std::{env, process};
+/// use minigrep::Config;
+///
+/// let config = Config::new(env::args()).unwrap_or_else(|err| {
+///     eprintln!("Problem parsing arguments: {}", err);
+///     process::exit(1);
+/// });
+///
+/// if let Err(e) = minigrep::run(config) {
+///     eprintln!("Application error: {}", e);
+///     process::exit(1);
+/// }
+/// ```
 pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
     let contents = fs::read_to_string(config.filename)?;
 
