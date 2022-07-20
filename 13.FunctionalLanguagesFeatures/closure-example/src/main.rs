@@ -17,4 +17,13 @@ fn main() {
     };
 
     println!("{}", expensive_closure(2));
+
+    let list = vec![1, 2, 3];
+    println!("First {:?}", list);
+
+    let only_borrows = || println!("From closure: {:?}", list);
+
+    println!("Before calling closure {:?}", list);
+    only_borrows();
+    println!("After calling closure {:?}", list);
 }
