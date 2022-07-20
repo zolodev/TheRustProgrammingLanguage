@@ -7,7 +7,10 @@
 *****************************************************************************/
 #![warn(clippy::all, clippy::pedantic)]
 
-use mycrate::{add_one, kinds::PrimaryColor, utils::mix};
+use mycrate::{
+    add_one,
+    Art::{kinds::PrimaryColor, utils::mix},
+};
 
 fn main() {
     let arg = 5;
