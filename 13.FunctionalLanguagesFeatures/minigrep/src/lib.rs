@@ -7,6 +7,13 @@
  *                 practices. This file will contain the app logic and tests.
  *                 Optimizing according to chapter 13
 *****************************************************************************/
+
+//! # minigrep
+//!
+//! `minigrep` is a small cli program example from the Rust book.
+//! The function is to query for a `string` in a text file.
+//! If a query yields a result, it will be prompted to the user.
+
 #![warn(clippy::all, clippy::pedantic)]
 
 use std::{env, error::Error, fs};
