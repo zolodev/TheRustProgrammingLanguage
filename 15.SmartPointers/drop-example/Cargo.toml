@@ -1,0 +1,12 @@
+[package]
+name = "drop-example"
+version = "0.1.0"
+edition = "2021"
+
+# in Workspaces, to determind that this package should be the default to run
+# Withouth the need to run `$ cargo run --bin drop-example`
+default-run = "drop-example"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
