@@ -38,6 +38,10 @@ impl<T> Deref for MyBox<T> {
     }
 }
 
+fn hello(name: &str) {
+    println!("Hello, {}!", name);
+}
+
 fn main() {
     let _list = Cons(1, Box::new(Cons(2, Box::new(Cons(3, Box::new(Nil))))));
 
@@ -53,4 +57,17 @@ fn main() {
 
     // *y is the same as *(y.deref()) behind the scene
     assert_eq!(5, *(y.deref()));
+
+    let m = MyBox::new(String::from("Rust"));
+
+    // This works because of the deref coercion
+    hello(&m);
+
+    // If we would not had the deref coercion the code would look like:
+    hello(&(*m));
+
+    // or ...
+    hello(&(*m)[..]);
+
+    // There is no runtime penalty for taking advantages of deref coercion!
 }
