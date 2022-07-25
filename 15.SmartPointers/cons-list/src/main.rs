@@ -7,7 +7,13 @@
 *****************************************************************************/
 #![warn(clippy::all, clippy::pedantic)]
 
+use crate::List::{Cons, Nil};
+
+enum List {
+    Cons(i32, List),
+    Nil,
+}
+
 fn main() {
-    let b = Box::new(5); // Using Box stores the value 5 on the heap
-    println!("b = {b}");
+    let list = Cons(1, Cons(2, Cons(3, Nil)));
 }
