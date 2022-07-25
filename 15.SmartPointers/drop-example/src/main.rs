@@ -22,9 +22,11 @@ fn main() {
         data: String::from("my stuff"),
     };
 
+    println!("CustomSmartPointer created.");
+    drop(c);
+    println!("CustomSmartPointer dropped before the end of main.");
+
     let d = CustomSmartPointer {
         data: String::from("other stuff"),
     };
-
-    println!("CustomSmartPointer created.")
 }
