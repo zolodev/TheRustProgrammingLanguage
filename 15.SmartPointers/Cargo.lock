@@ -9,3 +9,7 @@ version = "0.1.0"
 [[package]]
 name = "drop-example"
 version = "0.1.0"
+
+[[package]]
+name = "mock_messenger"
+version = "0.1.0"
