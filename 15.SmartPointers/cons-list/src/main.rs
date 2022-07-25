@@ -7,12 +7,12 @@
 *****************************************************************************/
 #![warn(clippy::all, clippy::pedantic)]
 
-use std::ops::Deref;
+use std::{ops::Deref, rc::Rc};
 
 use crate::List::{Cons, Nil};
 
 enum List {
-    Cons(i32, Box<List>),
+    Cons(i32, Rc<List>),
     Nil,
 }
 
@@ -43,7 +43,11 @@ fn hello(name: &str) {
 }
 
 fn main() {
-    let _list = Cons(1, Box::new(Cons(2, Box::new(Cons(3, Box::new(Nil))))));
+    let _list = Cons(1, Rc::new(Cons(2, Rc::new(Cons(3, Rc::new(Nil))))));
+
+    let a = Rc::new(Cons(5, Rc::new(Cons(10, Rc::new(Nil)))));
+    let b = Cons(3, Rc::clone(&a)); // Using Rc to clone a reference
+    let c = Cons(4, Rc::clone(&a)); // Twice...
 
     let x = 5;
     let y = MyBox::new(x); // similar to &x, using Box<T> creating an instance
