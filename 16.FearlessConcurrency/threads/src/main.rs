@@ -17,10 +17,10 @@ fn main() {
         }
     });
 
+    handle.join().unwrap(); // Wait until thread is done before continue
+
     for i in 1..5 {
         println!("hi number {} from main thread!", i);
         thread::sleep(Duration::from_millis(1));
     }
-
-    handle.join().unwrap(); // Wait to terminate until spawned thread is done
 }
