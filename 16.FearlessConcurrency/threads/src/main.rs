@@ -17,10 +17,16 @@ fn main() {
         }
     });
 
-    handle.join().unwrap(); // Wait until thread is done before continue
-
     for i in 1..5 {
         println!("hi number {} from main thread!", i);
         thread::sleep(Duration::from_millis(1));
     }
+
+    let v = vec![1, 2, 3];
+
+    let handle = thread::spawn(move || {
+        println!("Here's a vector: {:?}", v);
+    });
+
+    handle.join().unwrap(); // Wait until thread is done before continue
 }
