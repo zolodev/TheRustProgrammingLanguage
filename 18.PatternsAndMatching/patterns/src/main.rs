@@ -50,7 +50,7 @@ fn main() {
     //  |-- PATTERN
     //  |   |------- EXPRESSION
     //  v   v
-    let x = 5;
+    let _x = 5;
 
     // Another example using a tuple
     // destructure a tuple creates three variables at once
@@ -58,7 +58,7 @@ fn main() {
     //      |---- PATTERN (x, y, z)
     //      |           |------------- Matching Expression (1, 2, 3)
     //  vvvvvvvvv   vvvvvvvvv
-    let (x, y, z) = (1, 2, 3); // Results x = 1, y = 2, z = 3
+    let (_x, _y, _z) = (1, 2, 3); // Results x = 1, y = 2, z = 3
 
     let point = (3, 5);
     print_coordinates(&point);
@@ -75,6 +75,12 @@ fn main() {
 
     // Instead if we do not need to cover all cases except one...
     if let Some(x) = some_option_value {
+        println!("{}", x);
+    }
+
+    // This will yield a warning
+    // irrefutable `if let` pattern
+    if let x = 5 {
         println!("{}", x);
     }
 }
