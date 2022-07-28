@@ -47,17 +47,17 @@ fn main() {
     // while x is the whole pattern it will bind everything to the variable x.
     // let PATTERN = EXPRESSION;
 
-    //  |-- PATTERN
-    //  |   |------- EXPRESSION
-    //  v   v
+    //   |-- PATTERN
+    //   |   |------- EXPRESSION
+    //   v   v
     let _x = 5;
 
     // Another example using a tuple
     // destructure a tuple creates three variables at once
     //
-    //      |---- PATTERN (x, y, z)
-    //      |           |------------- Matching Expression (1, 2, 3)
-    //  vvvvvvvvv   vvvvvvvvv
+    //        |---- PATTERN (x, y, z)
+    //        |            |------------- Matching Expression (1, 2, 3)
+    //  vvvvvvvvvvvv   vvvvvvvvv
     let (_x, _y, _z) = (1, 2, 3); // Results x = 1, y = 2, z = 3
 
     let point = (3, 5);
