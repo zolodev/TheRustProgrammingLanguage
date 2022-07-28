@@ -164,6 +164,7 @@ fn main() {
     println!("Feet: {}, Inches: {}", feet, inches);
     println!("Point.x: {}, Point.y: {}", x, y);
 
+    // Will not use the '3' due to the functions signature bar(_, y)
     bar(3, 4);
 }
 
