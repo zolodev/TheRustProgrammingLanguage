@@ -62,6 +62,21 @@ fn main() {
 
     let point = (3, 5);
     print_coordinates(&point);
+
+    // Working with Refutable and irrefutable patterns
+    // a refutable pattern would be
+
+    let some_option_value: Option<i32> = None;
+    // let Some(x) = some_option_value; // Won't compile!
+    // Error, pattern `None` not covered
+    // Solution recomendation from the Rust compiler:
+    // let x = if let Some(x) = some_option_value { x } else { todo!() };
+    // Or ...
+
+    // Instead if we do not need to cover all cases except one...
+    if let Some(x) = some_option_value {
+        println!("{}", x);
+    }
 }
 
 // x is another pattern in a function like the one below.
