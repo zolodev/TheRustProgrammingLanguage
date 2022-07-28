@@ -157,6 +157,7 @@ fn main() {
         Message::ChangeColor(Color::Hsv(h, s, v)) => {
             println!("New color hue {}, saturation {}, value {}", h, s, v)
         }
+        _ => (),
     }
 
     // Nesting, mixing and matching like crazy
@@ -244,6 +245,20 @@ fn main() {
         4 | 5 | 6 if y => println!("yes"),
         _ => println!("no"),
     }
+
+    let msg = Message::Hello { id: 5 };
+
+    match msg {
+        Message::Hello {
+            // Temp variable id_variable to hold the value if it matches
+            id: id_variable @ 3..=7,
+        } => println!("Found an id in range: {}", id_variable),
+        Message::Hello { id: 10..=12 } => {
+            println!("Found an id in another range")
+        }
+        Message::Hello { id } => println!("Found some other id: {}", id),
+        _ => (),
+    }
 }
 
 struct Point {
@@ -252,6 +267,7 @@ struct Point {
 }
 
 enum Message {
+    Hello { id: i32 },
     Quit,
     Move { x: i32, y: i32 },
     Write(String),
