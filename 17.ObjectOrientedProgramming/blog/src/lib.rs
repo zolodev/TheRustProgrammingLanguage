@@ -7,8 +7,38 @@
 *****************************************************************************/
 #![warn(clippy::all, clippy::pedantic)]
 
-pub struct Post {}
+pub struct Post {
+    state: Option<Box<dyn State>>,
+    content: String,
+}
+
+trait State {}
+
+struct Draft {}
+
+impl State for Draft {}
 
 impl Post {
-    pub fn new() {}
+    pub fn new() -> Post {
+        Post {
+            state: Some(Box::new(Draft {})),
+            content: String::new(),
+        }
+    }
+
+    pub fn add_text(&self, content: &str) {
+        todo!()
+    }
+
+    pub fn request_review(&self) {
+        todo!()
+    }
+
+    pub fn approve(&self) {
+        todo!()
+    }
+
+    pub fn content(&self) -> String {
+        todo!()
+    }
 }
