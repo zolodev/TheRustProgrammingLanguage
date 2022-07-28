@@ -142,7 +142,7 @@ fn main() {
         Point { x, y } => println!("On neither axis: ({}, {})", x, y),
     }
 
-    // Matching and destructing Enums
+    // Matching and destructuring Enums
     let msg = Message::ChangeColor(0, 160, 255);
 
     match msg {
