@@ -166,6 +166,23 @@ fn main() {
 
     // Will not use the '3' due to the functions signature bar(_, y)
     bar(3, 4);
+
+    let mut setting_value = Some(5);
+    let new_setting_value = Some(10);
+
+    match (setting_value, new_setting_value) {
+        (Some(_), Some(_)) => {
+            // Will match the pattern (Some(x), Some(y)) without using the
+            // 'x' and 'y' variables the compiler will warn us of unused
+            // variables.
+            // if we use the '_' the compiler will not warn us about any
+            // unused variables.
+            println!("Can't overwrite an exsiting customized value");
+        }
+        _ => {
+            setting_value = new_setting_value;
+        }
+    }
 }
 
 struct Point {
