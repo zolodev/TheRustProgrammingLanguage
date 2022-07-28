@@ -53,5 +53,6 @@ fn main() {
     let x = 5;
 
     // Another example using a tuple
+    // destructure a tuple creates three variables at once
     let (x, y, z) = (1, 2, 3);
 }
