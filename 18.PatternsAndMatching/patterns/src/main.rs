@@ -54,5 +54,9 @@ fn main() {
 
     // Another example using a tuple
     // destructure a tuple creates three variables at once
-    let (x, y, z) = (1, 2, 3);
+    //
+    //      |---- PATTERN (x, y, z)
+    //      |           |------------- Matching Expression (1, 2, 3)
+    //  vvvvvvvvv   vvvvvvvvv
+    let (x, y, z) = (1, 2, 3); // Results x = 1, y = 2, z = 3
 }
