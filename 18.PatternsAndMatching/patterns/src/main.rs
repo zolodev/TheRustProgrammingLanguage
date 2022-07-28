@@ -157,8 +157,14 @@ fn main() {
         Message::ChangeColor(Color::Hsv(h, s, v)) => {
             println!("New color hue {}, saturation {}, value {}", h, s, v)
         }
-        _ => (),
     }
+
+    // Nesting, mixing and matching like crazy
+    let ((feet, inches), Point { x, y }) = ((3, 10), Point { x: 3, y: -10 });
+    println!("Feet: {}, Inches: {}", feet, inches);
+    println!("Point.x: {}, Point.y: {}", x, y);
+
+    bar(3, 4);
 }
 
 struct Point {
@@ -176,6 +182,10 @@ enum Message {
 enum Color {
     Rgb(i32, i32, i32),
     Hsv(i32, i32, i32),
+}
+
+fn bar(_: i32, y: i32) {
+    println!("This code only uses the y parameter: {}", y);
 }
 
 // x is another pattern in a function like the one below.
