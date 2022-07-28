@@ -94,6 +94,50 @@ fn main() {
     }
 
     println!("at the end: x = {:?}, y = {:?}", x, y);
+
+    let x = 1;
+
+    match x {
+        // 1 | 2, the pipe '|' = 'or' => match on either 1 or 2
+        1 | 2 => println!("one or two"),
+        3 => println!("three"),
+        _ => println!("anything"),
+    }
+
+    let x = 5;
+
+    match x {
+        // 1..=5, any number between 1 and 5 will match
+        1..=5 => println!("one through five"),
+        _ => println!("something else"),
+    }
+
+    let x = 'c';
+
+    match x {
+        'a'..='j' => println!("early ASCII letter"),
+        'k'..='z' => println!("late ASCII letter"),
+        _ => println!("something else"),
+    }
+
+    // Destructing values
+    let p = Point { x: 0, y: 7 };
+
+    // Destructing a struct, creates two variables 'a' and 'b' with the values
+    // from p.x and p.y
+    let Point { x: a, y: b } = p;
+    assert_eq!(0, a);
+    assert_eq!(7, b);
+
+    // Creates new variables 'x' and 'y' with the values from p.x and p.y
+    let Point { x, y } = p;
+    assert_eq!(0, x);
+    assert_eq!(7, y);
+}
+
+struct Point {
+    x: i32,
+    y: i32,
 }
 
 // x is another pattern in a function like the one below.
