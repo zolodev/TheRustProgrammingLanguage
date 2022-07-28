@@ -191,6 +191,11 @@ fn main() {
             println!("Some numbers: {}, {}, {}", first, third, fifth);
         }
     }
+
+    // Avoid compiler warnings of 'Unused variable' by prefix it with '_'
+    let _x = 5;
+    let y = 10;
+    println!("y: {}", y);
 }
 
 struct Point {
