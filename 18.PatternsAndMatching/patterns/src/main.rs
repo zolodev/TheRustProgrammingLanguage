@@ -143,7 +143,7 @@ fn main() {
     }
 
     // Matching and destructuring Enums
-    let msg = Message::ChangeColor(0, 160, 255);
+    let msg = Message::ChangeColor(Color::Hsv(0, 160, 255));
 
     match msg {
         Message::Quit => println!("The Quit varianthas no data to destruct"),
@@ -151,8 +151,11 @@ fn main() {
             println!("Move to cordinates x: {} and y: {}", x, y);
         }
         Message::Write(text) => println!("Text message: {}", text),
-        Message::ChangeColor(r, g, b) => {
+        Message::ChangeColor(Color::Rgb(r, g, b)) => {
             println!("New color red {}, green {}, blue {}", r, g, b)
+        }
+        Message::ChangeColor(Color::Hsv(h, s, v)) => {
+            println!("New color hue {}, saturation {}, value {}", h, s, v)
         }
     }
 }
@@ -166,7 +169,12 @@ enum Message {
     Quit,
     Move { x: i32, y: i32 },
     Write(String),
-    ChangeColor(i32, i32, i32),
+    ChangeColor(Color),
+}
+
+enum Color {
+    Rgb(i32, i32, i32),
+    Hsv(i32, i32, i32),
 }
 
 // x is another pattern in a function like the one below.
