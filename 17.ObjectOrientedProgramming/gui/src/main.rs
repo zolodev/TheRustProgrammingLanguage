@@ -43,4 +43,14 @@ fn main() {
     };
 
     screen.run();
+
+    // Listing 17-10, code that will not compile to demonstrate the error
+    // if the trait is not met.
+
+    // let screen2 = Screen {
+    // Error, the trait `Draw` is not implemented for `String`
+    // components: vec![Box::new(String::from("Hi!"))],
+    // };
+
+    // screen2.run();
 }
