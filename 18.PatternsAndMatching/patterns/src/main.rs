@@ -196,6 +196,16 @@ fn main() {
     let _x = 5;
     let y = 10;
     println!("y: {}", y);
+
+    let s = Some(String::from("Hello!"));
+
+    // if we use Some(_s) we need to set s.clone()
+    // if we use Some(_) it wil not be bound and we do not need to clone
+    if let Some(_) = s {
+        println!("found a string");
+    }
+
+    println!("{:?}", s);
 }
 
 struct Point {
