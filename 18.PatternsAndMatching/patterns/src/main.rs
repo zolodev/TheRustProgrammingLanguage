@@ -58,7 +58,7 @@ fn main() {
     //        |---- PATTERN (x, y, z)
     //        |            |------------- Matching Expression (1, 2, 3)
     //  vvvvvvvvvvvv   vvvvvvvvv
-    let (_x, _y, _z) = (1, 2, 3); // Results x = 1, y = 2, z = 3
+    let (_x, _y, _z) = (1, 2, 3); // Results _x = 1, _y = 2, _z = 3
 
     let point = (3, 5);
     print_coordinates(&point);
