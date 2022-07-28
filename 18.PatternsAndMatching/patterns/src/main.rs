@@ -213,6 +213,12 @@ fn main() {
         // Ignore the y point
         Point { x, .. } => println!("x is {}", x),
     }
+
+    match numbers {
+        (first, .., last) => {
+            println!("Some numbers: {}, {}", first, last);
+        }
+    }
 }
 
 struct Point {
