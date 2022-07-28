@@ -157,6 +157,7 @@ fn main() {
         Message::ChangeColor(Color::Hsv(h, s, v)) => {
             println!("New color hue {}, saturation {}, value {}", h, s, v)
         }
+        _ => (),
     }
 }
 
