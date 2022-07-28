@@ -141,11 +141,32 @@ fn main() {
         Point { x: 0, y } => println!("On the y axis at {}", y),
         Point { x, y } => println!("On neither axis: ({}, {})", x, y),
     }
+
+    // Matching and destructing Enums
+    let msg = Message::ChangeColor(0, 160, 255);
+
+    match msg {
+        Message::Quit => println!("The Quit varianthas no data to destruct"),
+        Message::Move { x, y } => {
+            println!("Move to cordinates x: {} and y: {}", x, y);
+        }
+        Message::Write(text) => println!("Text message: {}", text),
+        Message::ChangeColor(r, g, b) => {
+            println!("New color red {}, green {}, blue {}", r, g, b)
+        }
+    }
 }
 
 struct Point {
     x: i32,
     y: i32,
+}
+
+enum Message {
+    Quit,
+    Move { x: i32, y: i32 },
+    Write(String),
+    ChangeColor(i32, i32, i32),
 }
 
 // x is another pattern in a function like the one below.
