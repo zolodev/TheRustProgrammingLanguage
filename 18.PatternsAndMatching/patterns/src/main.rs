@@ -41,4 +41,17 @@ fn main() {
     for (index, value) in v.iter().enumerate() {
         println!("{} is at index {}", value, index);
     }
+
+    // Using let x = 5; as a pattern means the x is the PATTERN
+    // means "bind what matches here to the variable x"
+    // while x is the whole pattern it will bind everything to the variable x.
+    // let PATTERN = EXPRESSION;
+
+    //  |-- PATTERN
+    //  |   |------- EXPRESSION
+    //  v   v
+    let x = 5;
+
+    // Another example using a tuple
+    let (x, y, z) = (1, 2, 3);
 }
