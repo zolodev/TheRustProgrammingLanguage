@@ -26,8 +26,8 @@ impl Post {
         }
     }
 
-    pub fn add_text(&self, content: &str) {
-        todo!()
+    pub fn add_text(&mut self, text: &str) {
+        self.content.push_str(text);
     }
 
     pub fn request_review(&self) {
@@ -38,7 +38,7 @@ impl Post {
         todo!()
     }
 
-    pub fn content(&self) -> String {
-        todo!()
+    pub fn content(&self) -> &str {
+        ""
     }
 }
