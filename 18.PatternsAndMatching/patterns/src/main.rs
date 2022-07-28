@@ -59,4 +59,20 @@ fn main() {
     //      |           |------------- Matching Expression (1, 2, 3)
     //  vvvvvvvvv   vvvvvvvvv
     let (x, y, z) = (1, 2, 3); // Results x = 1, y = 2, z = 3
+
+    let point = (3, 5);
+    print_coordinates(&point);
+}
+
+// x is another pattern in a function like the one below.
+//
+//     |- PATTERN
+//     v
+fn foo(x: i32) {
+    todo!()
+}
+
+// Using pattern to get a tuple into a function
+fn print_coordinates(&(x, y): &(i32, i32)) {
+    println!("Current location: ({}, {})", x, y)
 }
