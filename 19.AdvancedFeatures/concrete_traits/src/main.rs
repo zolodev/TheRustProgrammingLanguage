@@ -72,6 +72,22 @@ impl Human {
     }
 }
 
+trait Animal {
+    fn baby_name() -> String;
+}
+struct Dog;
+
+impl Dog {
+    fn baby_name() -> String {
+        String::from("spot")
+    }
+}
+
+impl Animal for Dog {
+    fn baby_name() -> String {
+        String::from("puppy")
+    }
+}
 fn main() {
     assert_eq!(
         Point { x: 1, y: 0 } + Point { x: 2, y: 3 },
@@ -91,4 +107,13 @@ fn main() {
     // wizard.fly() //  Does not work.
     Wizard::fly(&person);
     Pilot::fly(&person);
+
+    println!("A baby dog is called a {}", Dog::baby_name());
+
+    // Does not compile, Due to Error, cannot infer type
+    // Because Rust can not know which implementation we want
+    // println!("A baby dog is called a {}", Animal::baby_name());
+
+    // Instead we need to disambiguate and be more explicit
+    println!("A baby dog is called a {}", <Dog as Animal>::baby_name());
 }
