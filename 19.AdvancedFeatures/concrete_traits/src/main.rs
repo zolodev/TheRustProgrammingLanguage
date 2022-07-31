@@ -107,6 +107,16 @@ impl fmt::Display for Point {
         write!(f, "({}, {})", self.x, self.y)
     }
 }
+
+// Adding Display to Vector
+// Get around the "Orphan rule" by adding a Wrapper struct
+struct Wrapper(Vec<String>);
+
+impl fmt::Display for Wrapper {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "[{}]", self.0.join(", "))
+    }
+}
 fn main() {
     assert_eq!(
         Point { x: 1, y: 0 } + Point { x: 2, y: 3 },
@@ -139,4 +149,7 @@ fn main() {
     let p1 = Point { x: 3, y: 1 };
     p1.outline_print();
     println!("p1 withouth outlining: {}", p1);
+
+    let w = Wrapper(vec![String::from("hello"), String::from("world")]);
+    println!("w = {}", w);
 }
