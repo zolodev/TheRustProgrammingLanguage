@@ -25,4 +25,12 @@ fn main() {
 
         // println!("_r3 is {}", *_r3); // Error, segmentation fault
     }
+
+    unsafe {
+        // Can only call dangours (unsafe) function from within
+        // either another unsafe function or an unsafe block like this.
+        dangerous();
+    }
 }
+
+unsafe fn dangerous() {}
