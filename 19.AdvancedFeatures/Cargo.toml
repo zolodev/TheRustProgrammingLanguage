@@ -6,4 +6,5 @@ members = [
     "global_variables",
     "concrete_traits",
     "functions-example",
+    "types-example",
 ]
