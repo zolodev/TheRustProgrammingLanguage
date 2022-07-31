@@ -1,3 +1,9 @@
 [workspace]
 
-members = ["unsafe-example", "ffi", "global_variables", "concrete_traits"]
+members = [
+    "unsafe-example",
+    "ffi",
+    "global_variables",
+    "concrete_traits",
+    "functions-example",
+]
