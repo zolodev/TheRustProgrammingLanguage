@@ -7,5 +7,9 @@ name = "ffi"
 version = "0.1.0"
 
 [[package]]
+name = "global_variables"
+version = "0.1.0"
+
+[[package]]
 name = "unsafe-example"
 version = "0.1.0"
