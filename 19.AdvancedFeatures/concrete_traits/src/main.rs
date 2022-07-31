@@ -44,6 +44,34 @@ impl Add for Point {
     }
 }
 
+trait Pilot {
+    fn fly(&self);
+}
+
+trait Wizard {
+    fn fly(&self);
+}
+
+struct Human;
+
+impl Pilot for Human {
+    fn fly(&self) {
+        println!("This is you captain speaking...");
+    }
+}
+
+impl Wizard for Human {
+    fn fly(&self) {
+        println!("Up!");
+    }
+}
+
+impl Human {
+    fn fly(&self) {
+        println!("*waving arms furiously*");
+    }
+}
+
 fn main() {
     assert_eq!(
         Point { x: 1, y: 0 } + Point { x: 2, y: 3 },
@@ -54,5 +82,13 @@ fn main() {
     let m2 = Meters(1);
     let m3 = m1 + m2;
 
-    println!("m3: {:?}", m3)
+    println!("m3: {:?}", m3);
+
+    // Fully qualified Syntax for methods with the same name
+    let person = Human;
+    person.fly();
+    // let wizard = Wizard;
+    // wizard.fly() //  Does not work.
+    Wizard::fly(&person);
+    Pilot::fly(&person);
 }
