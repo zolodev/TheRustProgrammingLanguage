@@ -19,9 +19,6 @@ fn main() {
     println!("x + y = {}", x + y);
 
     let f: Thunk = Box::new(|| println!("hi"));
-
-    let _s1: str = "Hello there!";
-    let _s2: str = "How's it going?";
 }
 
 fn takes_long_type(f: Thunk) {
@@ -32,6 +29,12 @@ fn returns_long_type() -> Thunk {
     todo!()
 }
 
-fn generic<T>(t: T) {
+// fn generic<T>(t: T) {
+// is the same as
+// fn generic<T: Sized>(t: T) {
+// A more relaxed way to do it
+// fn generic<T: ?Sized>(t: &T) {
+// ?Sized means “T may or may not be Sized”
+fn generic<T: ?Sized>(t: &T) {
     todo!()
 }
