@@ -19,6 +19,9 @@ fn main() {
     println!("x + y = {}", x + y);
 
     let f: Thunk = Box::new(|| println!("hi"));
+
+    let _s1: str = "Hello there!";
+    let _s2: str = "How's it going?";
 }
 
 fn takes_long_type(f: Thunk) {
@@ -26,5 +29,9 @@ fn takes_long_type(f: Thunk) {
 }
 
 fn returns_long_type() -> Thunk {
+    todo!()
+}
+
+fn generic<T>(t: T) {
     todo!()
 }
