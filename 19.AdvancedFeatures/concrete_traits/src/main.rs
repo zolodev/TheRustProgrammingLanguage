@@ -12,6 +12,20 @@
 
 use std::ops::Add;
 
+#[derive(Debug)]
+struct Millimeters(u32);
+
+#[derive(Debug)]
+struct Meters(u32);
+
+impl Add<Meters> for Millimeters {
+    type Output = Millimeters;
+
+    fn add(self, other: Meters) -> Self::Output {
+        Millimeters(self.0 + (other.0 * 1000))
+    }
+}
+
 #[derive(Debug, Copy, Clone, PartialEq)]
 struct Point {
     x: i32,
@@ -35,4 +49,10 @@ fn main() {
         Point { x: 1, y: 0 } + Point { x: 2, y: 3 },
         Point { x: 3, y: 3 }
     );
+
+    let m1 = Millimeters(15);
+    let m2 = Meters(1);
+    let m3 = m1 + m2;
+
+    println!("m3: {:?}", m3)
 }
