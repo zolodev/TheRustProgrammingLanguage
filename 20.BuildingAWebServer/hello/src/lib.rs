@@ -24,8 +24,6 @@ struct Worker {
     thread: JoinHandle<()>,
 }
 
-// struct Job;
-
 impl Worker {
     fn new(id: usize, receiver: Arc<Mutex<mpsc::Receiver<Job>>>) -> Worker {
         let thread = thread::spawn(move || loop {
@@ -36,7 +34,7 @@ impl Worker {
             job();
         });
 
-        Worker { id: id, thread }
+        Worker { id, thread }
     }
 }
 
