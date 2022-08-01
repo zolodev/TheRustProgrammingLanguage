@@ -7,6 +7,9 @@
 *****************************************************************************/
 #![warn(clippy::all, clippy::pedantic)]
 
+// More resources about Macros can be found at the following links:
+// https://doc.rust-lang.org/reference/macros-by-example.html
+// https://veykril.github.io/tlborm/
 #[macro_export]
 macro_rules! myvec {
     ( $( $x:expr ), *) => {
