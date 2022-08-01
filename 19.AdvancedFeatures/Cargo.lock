@@ -19,6 +19,10 @@ name = "global_variables"
 version = "0.1.0"
 
 [[package]]
+name = "macros-example"
+version = "0.1.0"
+
+[[package]]
 name = "types-example"
 version = "0.1.0"
 

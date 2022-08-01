@@ -7,4 +7,5 @@ members = [
     "concrete_traits",
     "functions-example",
     "types-example",
+    "macros-example",
 ]
