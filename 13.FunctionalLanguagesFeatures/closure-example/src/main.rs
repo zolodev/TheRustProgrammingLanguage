@@ -25,4 +25,8 @@ fn main() {
 
     borrows_mutable();
     println!("After calling closure {:?}", list);
+
+    // A very simple explaination of what a Closure is
+    let f = |x| x + 1;
+    println!("f: {}", f(10));
 }
