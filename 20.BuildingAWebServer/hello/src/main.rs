@@ -27,7 +27,7 @@ fn handle_connection(mut stream: TcpStream) {
 
     stream.read(&mut buffer).unwrap();
 
-    let status_line = "HTTP/1.1 200 OK\r\n\r\n";
+    let status_line = "HTTP/1.1 200 OK";
     let contents = fs::read_to_string("hello.html").unwrap();
 
     let response = format!(
