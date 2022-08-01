@@ -16,8 +16,12 @@ use std::{fs, thread};
 use hello::ThreadPool;
 
 fn main() {
-    let listener = TcpListener::bind("127.0.0.1:7878").unwrap();
+    let localhost = "127.0.0.1:7878";
+    let listener = TcpListener::bind(localhost).unwrap();
     let pool = ThreadPool::new(4);
+
+    println!("Web server started at {}", localhost);
+    println!("To shut down the server, press CTRL+C");
 
     for stream in listener.incoming() {
         let _stream = stream.unwrap();
@@ -26,6 +30,8 @@ fn main() {
             handle_connection(_stream);
         });
     }
+
+    println!("Shutting down...");
 }
 
 fn handle_connection(mut stream: TcpStream) {
