@@ -7,6 +7,8 @@
 *****************************************************************************/
 #![warn(clippy::all, clippy::pedantic)]
 
+type Job = Box<dyn FnOnce() + Send + 'static>;
+
 use std::{
     sync::{mpsc, Arc, Mutex},
     thread::{self, JoinHandle},
@@ -22,7 +24,7 @@ struct Worker {
     thread: JoinHandle<()>,
 }
 
-struct Job;
+// struct Job;
 
 impl Worker {
     fn new(id: usize, receiver: Arc<Mutex<mpsc::Receiver<Job>>>) -> Worker {
@@ -62,5 +64,8 @@ impl ThreadPool {
     where
         F: FnOnce() + Send + 'static,
     {
+        let job = Box::new(f);
+
+        self.sender.send(job).unwrap();
     }
 }
