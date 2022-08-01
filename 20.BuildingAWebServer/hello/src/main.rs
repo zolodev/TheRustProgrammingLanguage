@@ -3,7 +3,7 @@
  * Created       : Mon Aug 01 2022
  * Author        : Zolo
  * Github        : https://github.com/zolodev
- * Description   : Working through the Rust book chapter 20 builden a web
+ * Description   : Working through the Rust book chapter 20 building a web
  *                 server
 *****************************************************************************/
 #![warn(clippy::all, clippy::pedantic)]
