@@ -1,11 +1,13 @@
 # TheRustProgrammingLanguage
 This repo is me trying to follow the code examples of the rust book
+
 The book can be found at https://doc.rust-lang.org/book/title-page.html
 
 # My personal review and verdict
 
 ## TL;DR
 Whould I recommend this book?
+
 Yes, but **not** to a beginner.
 
 ## Overall
@@ -62,6 +64,13 @@ written and gave a good explaination that I enjoyed reading.
 
 **I would rate this book 2/5:**
 
+**The good**
+* Rust is a lot to cover in one book, many new concepts that are new and I 
+think it is important to mention that I find the author i many ways good at 
+explaining the new concept in a good way.
+* The example projects where very good, easy to follow and explained in a good
+way. In my opinion they where the reason I wanted to know more.
+
 **The bad**
 * For refering to other chapters "in the future". Why not explain it while we
 are on the topic?
@@ -78,12 +87,8 @@ all the code to be production ready with good explainations (proof).
 * This is not a book for beginners, this might be a good book when you worked
 several months with the Rust language. To get a deeper understanding of Rust.
 
-**The good**
-* Rust is a lot to cover in one book, many new concepts that are new and I 
-think it is important to mention that I find the author i many ways good at 
-explaining the new concept in a good way.
-* The example projects where very good, easy to follow and explained in a good
-way. In my opinion they where the reason I wanted to know more.
+
 
 **Would I recommend the book?**
+
 Yes, but **not** to a beginner.
