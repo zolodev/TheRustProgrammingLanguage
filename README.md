@@ -1,7 +1,8 @@
 # TheRustProgrammingLanguage
 This repo is me trying to follow the code examples of the rust book
 
-The book can be found at https://doc.rust-lang.org/book/title-page.html
+The book can be found at 
+[Rust book](https://doc.rust-lang.org/book/title-page.html)
 
 # My personal review and verdict
 
@@ -15,14 +16,15 @@ Yes, but **not** to a beginner.
 ## Overall
 
 Overall it is a lot to cover in a book like this. Not only did I buy a copy of
-the physical book but I found myself reading it
-[online](https://doc.rust-lang.org/book/title-page.html).
+the physical book to support the authors. I found it to be easier reading it
+[online](https://doc.rust-lang.org/book/title-page.html) instead.
 
 I read everything from cover to cover over several days. I tried to do at 
 least one chapter each day.
 
 My background in development is over 10 years. I have worked as a Software
-Developer over 5years with other languages like C# and Python.
+Developer with other languages like C# and Python. But started development at
+the age of 12. I have read a lot of books and online material in my life.
 
 With that said...
 
@@ -52,17 +54,17 @@ println!("f: {}", f(10));   // Result: 11
 ```
 
 One other thing I was missing was the "proof" of many of the examples.
-The lack of proof that would make a different could have done so much.
-Several examples in the book are missing "the proof". Much of the examples is
-very theoretically and hypothetical. In other words, not very beginner 
-friendly. Most of the time I had to add my own proof. To verify that I 
-understand how to use the implementation of the code example.
+The lack of proof that would make a different, could have done so much for my
+general understanding. Several examples in the book are missing "the proof".
+Much of the examples is very theoretically and hypothetical. In other words, 
+not very beginner friendly. Most of the time I had to add my own proof. 
+To verify that I understand how to use the implementation of the code example.
 
 ## Verdict
 
-Even tho I could figure out many of the theoretical code and discussion,
-I had a lot of problem understanding why. While Other chapters where very well
-written and gave a good explaination that I enjoyed reading.
+I could figure out many of the theoretical code and discussion, I had a lot of
+problem understanding why. While Other chapters where very well written and
+gave a good explaination that I enjoyed reading.
 
 **I would rate this book 4/5:**
 
