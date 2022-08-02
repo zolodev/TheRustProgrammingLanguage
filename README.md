@@ -6,6 +6,8 @@ The book can be found at https://doc.rust-lang.org/book/title-page.html
 # My personal review and verdict
 
 ## TL;DR
+I rate this book 4/5
+
 Whould I recommend this book?
 
 Yes, but **not** to a beginner.
@@ -62,9 +64,10 @@ Even tho I could figure out many of the theoretical code and discussion,
 I had a lot of problem understanding why. While Other chapters where very well
 written and gave a good explaination that I enjoyed reading.
 
-**I would rate this book 2/5:**
+**I would rate this book 4/5:**
 
 **The good**
+* It is free and open source!
 * Rust is a lot to cover in one book, many new concepts that are new and I 
 think it is important to mention that I find the author i many ways good at 
 explaining the new concept in a good way.
