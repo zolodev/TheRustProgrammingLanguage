@@ -11,7 +11,7 @@ I rate this book 4/5
 
 Should I recommend this book?
 
-Yes, but **not** to a beginner.
+Yes, but **not** to beginners.
 
 ## Overall
 
@@ -89,11 +89,11 @@ are to verbose. Where there is more simplier ways to explain code with.
 examples. This is not only dangerous to teach but could lead to bad code.
 If I could change one thing in the book I would recommend the author to fix
 all the code to be production ready with good explainations (proof).
-* This is not a book for beginners, this might be a good book when you worked
+* This is *not* a book for beginners, this might be a good book when you worked
 several months with the Rust language. To get a deeper understanding of Rust.
 
 
 
-**Would I recommend the book?**
+**Should I recommend the book?**
 
-Yes, but **not** to a beginner.
+Yes, but **not** to beginners.
