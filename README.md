@@ -9,7 +9,7 @@ The book can be found at
 ## TL;DR
 I rate this book 4/5
 
-Whould I recommend this book?
+Should I recommend this book?
 
 Yes, but **not** to a beginner.
 
