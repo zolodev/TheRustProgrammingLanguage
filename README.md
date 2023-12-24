@@ -35,14 +35,14 @@ I felt a familiarity to the approach that I knew about when I started to learn.
 However from chapter 3 I started to struggle a lot with the code examples.
 I never really felt that the author was explaining the intentions nor the
 motivations of the examples in depth. The code examples felt like they where
-always "half baked" and the author refered to another chapter.
+always "half baked" and the author referred to another chapter.
 
 One of the thing that was not clear for me to begin with; but it came to me in
 future chapters; was the chapter regarding
 [Closures](https://doc.rust-lang.org/book/ch13-01-closures.html).
 
 This was the first time I got stuck for several hours, trying to understand
-the authors intention and purpos of the code example.
+the authors intention and purpose of the code example.
 
 I turned to the community for guidance, where I got a very good example to
 understand closure. So instead of looking at Listing 13-1 (52 lines of code)
@@ -64,7 +64,7 @@ To verify that I understand how to use the implementation of the code example.
 
 I could figure out many of the theoretical code and discussion, I had a lot of
 problem understanding why. While Other chapters where very well written and
-gave a good explaination that I enjoyed reading.
+gave a good explanation that I enjoyed reading.
 
 **I would rate this book 4/5:**
 
@@ -77,18 +77,18 @@ explaining the new concept in a good way.
 way. In my opinion they where the reason I wanted to know more.
 
 **The bad**
-* For refering to other chapters "in the future". Why not explain it while we
+* For referring to other chapters "in the future". Why not explain it while we
 are on the topic?
 * For lacking a lot of proof, to show that the code (that compiles) works. I 
 miss more examples of usage of some parts. To get the verification how to use
 the code.
-* I find my self wondering more about the code and the motiviation instead of
+* I find my self wondering more about the code and the motivation instead of
 understanding what the author is trying to convey. By bad code examples that 
-are to verbose. Where there is more simplier ways to explain code with.
+are to verbose. Where there is more simpler ways to explain code with.
 * The worst thing to teach is bad practices! No production ready code is bad
 examples. This is not only dangerous to teach but could lead to bad code.
 If I could change one thing in the book I would recommend the author to fix
-all the code to be production ready with good explainations (proof).
+all the code to be production ready with good explanations (proof).
 * This is *not* a book for beginners, this might be a good book when you worked
 several months with the Rust language. To get a deeper understanding of Rust.
 
